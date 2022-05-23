@@ -34,8 +34,7 @@ server <- function(input, output) {
         filter = 'top',       ## include column filters at the bottom
         rownames = FALSE      ## don't show row numbers/names
   )
-  
 }
-
 # Run the application
 shinyApp(ui = ui, server = server)
+
