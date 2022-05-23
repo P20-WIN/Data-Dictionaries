@@ -4,7 +4,7 @@ library(DT)
 library(readxl)
 
 
-P20WIN_Data_Dictionary <- read_excel("~/Metadata Web App/P20WIN_Data_Dictionary.xlsx")
+P20WIN_Data_Dictionary <- read_excel("~/Data-Dictionaries/Metadata_App/P20WIN_Data_Dictionary.xlsx")
 
 ui <- fluidPage(titlePanel("P20 WIN Data Dictionary"),
                 sidebarLayout(
