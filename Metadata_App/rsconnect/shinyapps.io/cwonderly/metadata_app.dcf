@@ -1,0 +1,11 @@
+name: metadata_app
+title:
+username:
+account: cwonderly
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6357817
+bundleId: 5975491
+url: https://cwonderly.shinyapps.io/metadata_app/
+when: 1654274874.81516
+lastSyncTime: 1654274874.81516
