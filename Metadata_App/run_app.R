@@ -1,1 +1,2 @@
-rsconnect::deployApp('~/Metadata Web App/Data-Dictionaries/Metadata_App')
+rsconnect::deployApp('~/Data-Dictionaries/Metadata_App')
+
