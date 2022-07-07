@@ -5,7 +5,7 @@ account: cwonderly
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6357817
-bundleId: 6014787
+bundleId: 6078951
 url: https://cwonderly.shinyapps.io/metadata_app/
-when: 1655402361.60379
-lastSyncTime: 1655402361.60379
+when: 1657212110.58043
+lastSyncTime: 1657212110.58043
