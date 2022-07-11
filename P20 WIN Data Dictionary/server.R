@@ -52,7 +52,7 @@ server <- function(session, input, output) {
     agencies() %>%
       filter(`Data Category` %in% input$select_category)
     },
-    escape = -1,
+    escape = 0,
     options = list(paging = TRUE,    ## paginate the output
                   pageLength = 100, ## number of rows to output for each page
                   scrollX = TRUE,   ## enable scrolling on X axis

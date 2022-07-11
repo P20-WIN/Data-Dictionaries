@@ -26,7 +26,7 @@ ui <- fluidPage(title="P20 WIN Data Dictionary",theme = bs_theme(
   titlePanel(
     fluidRow( 
       column(4, h1("P20 WIN Data Dictionary", align = "left",style = "padding-bottom:30px;")),
-      column(4, offset = 4, img(width = 150, src = "P20WIN_logo.png", align = "Right", style = "padding-top:30px;"))
+      column(4, offset = 4, img(width = 175, src = "P20WIN_logo.png", align = "Right", style = "padding-top:30px;"))
       )
     ),
   sidebarLayout(
