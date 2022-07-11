@@ -8,7 +8,7 @@ This repository contains the P20 WIN Data Dictionary, and the scripts for creati
 
 1. Open the folder above titled Data Dictionaries (Upload Here)
 
-2. Select your agency's folder. 
+2. Select your agency's folder
 
 ![dd 1](https://user-images.githubusercontent.com/103579521/178348154-f8c7c2a7-ee8f-4b8a-afca-93f24b660a88.PNG)
 ![dd 2](https://user-images.githubusercontent.com/103579521/178348288-22f520c0-1571-4691-aac6-b383c4469889.PNG)
