@@ -32,19 +32,29 @@ ui <- fluidPage(title="P20 WIN Data Dictionary",theme = bs_theme(
   sidebarLayout(
     sidebarPanel(width = 3,
                  pickerInput("select_agency",
-                             label = "Select Sources",
+                             label = "Select Agencies",
                              choices = unique(P20WIN_Data_Dictionary$Agency),
                              selected = unique(P20WIN_Data_Dictionary$Agency),
                              options = list(`actions-box` = TRUE,
                                             `count-selected-text` = "{0}/{1} Selected"),
-                             multiple = TRUE),
+                             multiple = TRUE
+                             ),
+                 pickerInput("select_program",
+                             "Select Programs",
+                             choices = as.list(unique(P20WIN_Data_Dictionary$Program)),
+                             selected = unique(P20WIN_Data_Dictionary$Program),
+                             options = list(`actions-box` = TRUE,
+                                            `count-selected-text` = "{0}/{1} Selected"),
+                             multiple = TRUE
+                             ),
                  pickerInput("select_category",
                              "Select Data Categories",
                              choices = as.list(unique(P20WIN_Data_Dictionary$`Data Category`)),
                              selected = unique(P20WIN_Data_Dictionary$`Data Category`),
                              options = list(`actions-box` = TRUE,
                                             `count-selected-text` = "{0}/{1} Selected"),
-                             multiple = TRUE)
+                             multiple = TRUE
+                             )
             #     pickerInput("select_years",
             #                        "Filter Elements by Years Available:",
             #                        choices = as.list(unique(P20WIN_Data_Dictionary$`Years Available`)),

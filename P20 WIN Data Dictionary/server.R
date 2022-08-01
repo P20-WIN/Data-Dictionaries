@@ -14,6 +14,10 @@ P20WIN_Data_Dictionary$`Click to View Additional Information` <- '&oplus;'
 P20WIN_Data_Dictionary <- P20WIN_Data_Dictionary[,c(8,1:7)]
 
 server <- function(session, input, output) {
+  
+  session$onSessionEnded(function() {
+    stopApp()
+  })
     
   #bs_themer()
   
@@ -24,7 +28,7 @@ server <- function(session, input, output) {
 #  observeEvent(years(), {
 #    choices_1 <- unique(years()$Agency)
 #    updatePickerInput(session,
-#                      inputId = "select_source",
+#                      inputId = "select_program",
 #                      choices = choices_1,
 #                      selected = choices_1)
 #  })
@@ -33,24 +37,37 @@ server <- function(session, input, output) {
     filter(P20WIN_Data_Dictionary, Agency %in% input$select_agency)
   })
   observeEvent(agencies(), {
-    choices_1 <- unique(agencies()$`Data Category`)
-    #choices_2 <- unique(agencies()$`Years Available`)
+    choices_1 <- unique(agencies()$Program)
+    choices_2 <- unique(agencies()$`Data Category`)
     updatePickerInput(session,
-                      inputId = "select_category",
+                      inputId = "select_program",
                       choices=choices_1,
                       selected = choices_1)
-    #updatePickerInput(session, 
-    #                         inputId = "select_years",
-    #                         choices = choices_2,
-    #                         selected = choices_2)
+    updatePickerInput(session,
+                      inputId = "select_category",
+                      choices = choices_2,
+                      selected = choices_2)
+  })
+  
+  programs <- reactive({
+    filter(P20WIN_Data_Dictionary, Program %in% input$select_program)
+  })
+  observeEvent(programs(), {
+    choices_3 <- unique(programs()$`Data Category`)
+    choices_4 <- unique(programs()$Agency)
+    updatePickerInput(session,
+                      inputId = "select_category",
+                      choices = choices_3,
+                      selected = choices_3)
   })
   
 
   output$mytable <- DT::renderDataTable({
-    #req(input$select_years)
+    req(input$select_program)
     req(input$select_category)
     agencies() %>%
-      filter(`Data Category` %in% input$select_category)
+      filter(`Data Category` %in% input$select_category) %>%
+      filter(Program %in% input$select_program)
     },
     escape = 0,
     options = list(paging = TRUE,    ## paginate the output
