@@ -21,18 +21,6 @@ server <- function(session, input, output) {
     
   #bs_themer()
   
-# years <-  reactive({
-#   P20WIN_Data_Dictionary[P20WIN_Data_Dictionary$`First Year Available` <= input$range,]
-#    P20WIN_Data_Dictionary[P20WIN_Data_Dictionary$`First Year Available` >= input$range,]
-#  })
-#  observeEvent(years(), {
-#    choices_1 <- unique(years()$Agency)
-#    updatePickerInput(session,
-#                      inputId = "select_program",
-#                      choices = choices_1,
-#                      selected = choices_1)
-#  })
-  
   agencies <- reactive({
     filter(P20WIN_Data_Dictionary, Agency %in% input$select_agency)
   })
@@ -50,11 +38,10 @@ server <- function(session, input, output) {
   })
   
   programs <- reactive({
-    filter(P20WIN_Data_Dictionary, Program %in% input$select_program)
+    filter(agencies(), Program %in% input$select_program)
   })
   observeEvent(programs(), {
     choices_3 <- unique(programs()$`Data Category`)
-    choices_4 <- unique(programs()$Agency)
     updatePickerInput(session,
                       inputId = "select_category",
                       choices = choices_3,
@@ -71,7 +58,7 @@ server <- function(session, input, output) {
     },
     escape = 0,
     options = list(paging = TRUE,    ## paginate the output
-                  pageLength = 100, ## number of rows to output for each page
+                  pageLength = 50, ## number of rows to output for each page
                   scrollX = TRUE,   ## enable scrolling on X axis
                   scrollY = TRUE,   ## enable scrolling on Y axis
                   #autoWidth = TRUE,
