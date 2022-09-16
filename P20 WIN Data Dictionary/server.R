@@ -65,7 +65,7 @@ server <- function(session, input, output) {
                   columnDefs = list(
                   #  list(width = '25px', targets = c(0)),
                     list(width = '100px', targets = c(0)),
-                    list(width = '200px', targets = c(1,2,3,4)),
+                    list(width = '180px', targets = c(1,2,3,4)),
                     list(width = '300px', targets = c(5)),
                     list(visible = FALSE, targets = c(6, 7)),
                     list(orderable = FALSE, className = 'details-control', targets = 0)),
