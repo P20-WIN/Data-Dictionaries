@@ -58,7 +58,7 @@ server <- function(session, input, output) {
     },
     escape = 0,
     options = list(paging = TRUE,    ## paginate the output
-                  pageLength = 50, ## number of rows to output for each page
+                  pageLength = 2000, ## number of rows to output for each page
                   scrollX = TRUE,   ## enable scrolling on X axis
                   scrollY = TRUE,   ## enable scrolling on Y axis
                   #autoWidth = TRUE,
