@@ -71,7 +71,12 @@ server <- function(session, input, output) {
                     list(orderable = FALSE, className = 'details-control', targets = 0)),
                   server = FALSE,   ## use client-side processing
                   dom = 'Bfrtip',
-                  buttons = c('csv', 'excel')
+                  buttons = list(
+                    list(extend = 'csv', title = NULL, exportOptions = list(columns = c(1:7)), 
+                         filename = "P20_WIN_Data_Dictionary"), 
+                    list(extend = 'excel', title = NULL, exportOptions = list(columns = c(1:7)),
+                         filename = "P20_WIN_Data_Dictionary")
+                  )
                   
     ),
     callback = JS("
