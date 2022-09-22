@@ -70,12 +70,14 @@ sidebarLayout(
     tags$head(
       tags$style(HTML("table {table-layout: fixed;"))
       ),
-    DT::dataTableOutput("mytable", width = '1175px')
+    DT::dataTableOutput("mytable", width = '1175px'),
+    #tags$hr(style = "border-top: 1px solid #648290;
+    #        width: 940px;")
     )
   ),
 fluidRow(
   #This row is used to show what date the data dictionary was last updated
-  column(8, h6("last updated: 9/21/2022", align = "left"))
+  column(8, h6("last updated: 9/22/2022", align = "left"))
 )
 )
 
