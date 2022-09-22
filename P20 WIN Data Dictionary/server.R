@@ -1,3 +1,4 @@
+#### Installing Packages ####
 library(shiny)
 library(shinyWidgets)
 library(readxl)
@@ -6,13 +7,14 @@ library(shinydashboard)
 library(shinythemes)
 library(bslib)
 library(DT)
-
 thematic::thematic_shiny(font = "auto")
 
+#### Reading in the Data Dictionary ####
 P20WIN_Data_Dictionary <- read_excel("P20WIN_Data_Dictionary.xlsx")
-P20WIN_Data_Dictionary$`Click to View Additional Information` <- '&oplus;'
-P20WIN_Data_Dictionary <- P20WIN_Data_Dictionary[,c(8,1:7)]
+P20WIN_Data_Dictionary$`Click to View Additional Information` <- '&oplus;' #adding the column that will be used to expand the selection.
+P20WIN_Data_Dictionary <- P20WIN_Data_Dictionary[,c(8,1:7)] #moving the added column to be the first column
 
+#### Server Script ####
 server <- function(session, input, output) {
   
   session$onSessionEnded(function() {
@@ -57,28 +59,27 @@ server <- function(session, input, output) {
       filter(Program %in% input$select_program)
     },
     escape = 0,
-    options = list(paging = TRUE,    ## paginate the output
-                  pageLength = 2000, ## number of rows to output for each page
-                  scrollX = TRUE,   ## enable scrolling on X axis
-                  scrollY = TRUE,   ## enable scrolling on Y axis
-                  #autoWidth = TRUE,
-                  columnDefs = list(
-                  #  list(width = '25px', targets = c(0)),
-                    list(width = '100px', targets = c(0)),
-                    list(width = '180px', targets = c(1,2,3,4)),
-                    list(width = '300px', targets = c(5)),
-                    list(visible = FALSE, targets = c(6, 7)),
-                    list(orderable = FALSE, className = 'details-control', targets = 0)),
-                  server = FALSE,   ## use client-side processing
-                  dom = 'Bfrtip',
-                  buttons = list(
-                    list(extend = 'csv', title = NULL, exportOptions = list(columns = c(1:7)), 
-                         filename = "P20_WIN_Data_Dictionary"), 
-                    list(extend = 'excel', title = NULL, exportOptions = list(columns = c(1:7)),
-                         filename = "P20_WIN_Data_Dictionary")
-                  )
-                  
-    ),
+    options = list(                
+                scrollX = TRUE,   ## enable scrolling on X axis
+                scrollY = 400,   ## enable scrolling on Y axis
+                autoWidth = TRUE,
+                columnDefs = list(
+                  list(targets = c(0), visible = TRUE, width = '90px',
+                       orderable = FALSE, className = 'details-control'), 
+                  list(targets = c(1,2,3,4), visible = TRUE, width='100px'), 
+                  list(targets = c(5), visible = TRUE, width='430px'), 
+                  list(targets = c(6,7), visible = FALSE, width = '0px')), 
+                paging = FALSE,    ## paginate the output
+                pageLength = 2000, ## number of rows to output for each page
+                server = FALSE,   ## use client-side processing
+                dom = 'Bfrt',
+                buttons = list(
+                  list(extend = 'csv', title = NULL, exportOptions = list(columns = c(1:7)),
+                       filename = "P20_WIN_Data_Dictionary"), 
+                  list(extend = 'excel', title = NULL, exportOptions = list(columns = c(1:7)),
+                        filename = "P20_WIN_Data_Dictionary")
+                 )
+                ),
     callback = JS("
   table.column(0).nodes().to$().css({cursor: 'pointer'});
   var format = function(d) {
@@ -98,7 +99,6 @@ server <- function(session, input, output) {
 ),
     extensions = 'Buttons',
     selection = 'single', ## enable selection of a single row
-    #filter = 'top',       ## include column filters at the bottom
     rownames = FALSE      ## don't show row numbers/names
   )
 }
