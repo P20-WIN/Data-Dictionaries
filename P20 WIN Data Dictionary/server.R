@@ -9,21 +9,9 @@ library(bslib)
 library(DT)
 thematic::thematic_shiny(font = "auto")
 
-#### Reading in the Data Dictionaries ####
-CCIC <- read_excel("~/Data-Dictionaries/P20 WIN Data Dictionary/Data Dictionaries (Upload Here)/CCIC/CCIC_Data_Dictionary.xlsx")
-CSCU <- read_excel("~/Data-Dictionaries/P20 WIN Data Dictionary/Data Dictionaries (Upload Here)/CSCU/CSCU_Data_Dictionary.xlsx")
-DCF <- read_excel("~/Data-Dictionaries/P20 WIN Data Dictionary/Data Dictionaries (Upload Here)/DCF/DCF_Data_Dictionary.xlsx")
-DHMAS <- read_excel("~/Data-Dictionaries/P20 WIN Data Dictionary/Data Dictionaries (Upload Here)/DMHAS/DMHAS_Data_Dictionary.xlsx")
-DOL <- read_excel("~/Data-Dictionaries/P20 WIN Data Dictionary/Data Dictionaries (Upload Here)/DOL/DOL_Data_Dictionary.xlsx")
-OEC <- read_excel("~/Data-Dictionaries/P20 WIN Data Dictionary/Data Dictionaries (Upload Here)/OEC/OEC_Data_Dictionary.xlsx")
-OHE <- read_excel("~/Data-Dictionaries/P20 WIN Data Dictionary/Data Dictionaries (Upload Here)/OHE/OHE_Data_Dictionary.xlsx")
-SDE <- read_excel("~/Data-Dictionaries/P20 WIN Data Dictionary/Data Dictionaries (Upload Here)/SDE/SDE_Data_Dictionary.xlsx")
-UConn <- read_excel("~/Data-Dictionaries/P20 WIN Data Dictionary/Data Dictionaries (Upload Here)/UConn/UConn_Data_Dictionary.xlsx")
 
-#### Creating P20 WIN Data Dictionary ####
-P20WIN_Data_Dictionary <- rbind(CCIC,CSCU,DCF,DHMAS,DOL,OEC,OHE,SDE,UConn)
-P20WIN_Data_Dictionary$`Click to View More` <- '&oplus;' #adding the column that will be used to expand the selection.
-P20WIN_Data_Dictionary <- P20WIN_Data_Dictionary[,c(8,1:7)] #moving the added column to be the first column
+#### Reading in the Data Dictionary ####
+P20WIN_Data_Dictionary <- read_excel("P20WIN_Data_Dictionary.xlsx")
 
 #### Server Script ####
 server <- function(session, input, output) {
