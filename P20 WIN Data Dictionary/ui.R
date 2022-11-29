@@ -11,7 +11,7 @@ thematic::thematic_shiny(font = "auto")
 
 #### Reading in the Data Dictionary ####
 P20WIN_Data_Dictionary <- read_excel("P20WIN_Data_Dictionary.xlsx")
-P20WIN_Data_Dictionary$`Click to View Additional Information` <- '&oplus;' #adding the column that will be used to expand the selection.
+P20WIN_Data_Dictionary$`Click to View More` <- '&oplus;' #adding the column that will be used to expand the selection.
 P20WIN_Data_Dictionary <- P20WIN_Data_Dictionary[,c(8,1:7)] #moving the added column to be the first column
 
 #### UI Script ####
@@ -70,7 +70,7 @@ sidebarLayout(
     tags$head(
       tags$style(HTML("table {table-layout: fixed;"))
       ),
-    DT::dataTableOutput("mytable", width = '1175px'),
+    DT::dataTableOutput("mytable"),
     #tags$hr(style = "border-top: 1px solid #648290;
     #        width: 940px;")
     )
