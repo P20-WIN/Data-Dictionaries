@@ -9,12 +9,11 @@ library(bslib)
 library(DT)
 thematic::thematic_shiny(font = "auto")
 
+#### UI Script ####
+
 #### Reading in the Data Dictionary ####
 P20WIN_Data_Dictionary <- read_excel("P20WIN_Data_Dictionary.xlsx")
-P20WIN_Data_Dictionary$`Click to View More` <- '&oplus;' #adding the column that will be used to expand the selection.
-P20WIN_Data_Dictionary <- P20WIN_Data_Dictionary[,c(8,1:7)] #moving the added column to be the first column
 
-#### UI Script ####
 
 #The UI script is used to set the themes, fonts, and layout of the page. 
 
