@@ -6,7 +6,7 @@ This repository contains the P20 WIN Data Dictionary, and the scripts for creati
 
 #### How to upload a new data dictionary or update an existing data dictionary.
 
-1. Open the folder above titled Data Dictionaries (Upload Here)
+1. Open the folder titled Data Dictionaries then open the folder above titled Data Dictionaries (Upload Here)
 
 2. Select your agency's folder
 
