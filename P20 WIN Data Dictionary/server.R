@@ -59,14 +59,14 @@ server <- function(session, input, output) {
     },
     escape = 0,
     options = list(                
-                scrollX = TRUE,   ## enable scrolling on X axis
+                scrollX = FALSE,   ## enable scrolling on X axis
                 scrollY = 370,   ## enable scrolling on Y axis
-                autoWidth = TRUE,
+                autoWidth = FALSE,
                 columnDefs = list(
                   list(targets = c(0), visible = TRUE, width = '50px',
                        orderable = FALSE, className = 'details-control'), 
                   list(targets = c(1,2,3,4), visible = TRUE, width='100px'), 
-                  list(targets = c(5), visible = TRUE, width='410px'), 
+                  list(targets = c(5), visible = TRUE), 
                   list(targets = c(6,7), visible = FALSE, width = '0px')), 
                 paging = FALSE,    ## paginate the output
                 pageLength = 2000, ## number of rows to output for each page
