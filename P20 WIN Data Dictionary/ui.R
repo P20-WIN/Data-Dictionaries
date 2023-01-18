@@ -7,13 +7,13 @@ library(shinydashboard)
 library(shinythemes)
 library(bslib)
 library(DT)
+library(htmlwidgets)
 thematic::thematic_shiny(font = "auto")
 
 #### UI Script ####
 
 #### Reading in the Data Dictionary ####
 P20WIN_Data_Dictionary <- read_excel("P20WIN_Data_Dictionary.xlsx")
-
 
 #The UI script is used to set the themes, fonts, and layout of the page. 
 
@@ -31,7 +31,7 @@ titlePanel(
   #This panel contains the title and P20 WIN logo
   fluidRow(
     column(4, h1("P20 WIN Data Dictionary", align = "left",style = "padding-bottom:30px;")),
-    column(4, offset = 4, img(width = 175, src = "P20WIN_logo.png", align = "Right", style = "padding-top:30px;"))
+    column(4, offset = 4, img(width = 190, src = "P20WIN_logo.png", align = "Right", style = "padding-top:25px;"))
     )
   ),
 sidebarLayout(
@@ -66,6 +66,7 @@ sidebarLayout(
   mainPanel(
     #This panel contains the data dictionary table.
     width = 9,
+    height = 100,
     tags$head(
       tags$style(HTML("table {table-layout: fixed;"))
       ),
@@ -76,7 +77,7 @@ sidebarLayout(
   ),
 fluidRow(
   #This row is used to show what date the data dictionary was last updated
-  column(8, h6("last updated: 9/22/2022", align = "left"))
+  column(8, h6("last updated: 11/29/2022", align = "left"))
 )
 )
 

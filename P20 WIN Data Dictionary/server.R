@@ -7,6 +7,7 @@ library(shinydashboard)
 library(shinythemes)
 library(bslib)
 library(DT)
+library(htmlwidgets)
 thematic::thematic_shiny(font = "auto")
 
 
@@ -60,12 +61,12 @@ server <- function(session, input, output) {
     escape = 0,
     options = list(                
                 scrollX = FALSE,   ## enable scrolling on X axis
-                scrollY = 370,   ## enable scrolling on Y axis
+                scrollY = '50vh',   ## enable scrolling on Y axis
                 autoWidth = FALSE,
                 columnDefs = list(
                   list(targets = c(0), visible = TRUE, width = '50px',
                        orderable = FALSE, className = 'details-control'), 
-                  list(targets = c(1,2,3,4), visible = TRUE, width='100px'), 
+                  list(targets = c(1,2,3,4), visible = TRUE, width='89px'), 
                   list(targets = c(5), visible = TRUE), 
                   list(targets = c(6,7), visible = FALSE, width = '0px')), 
                 paging = FALSE,    ## paginate the output
