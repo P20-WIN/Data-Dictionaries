@@ -5,7 +5,9 @@ account: ctopendata
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6607389
-bundleId: 6770028
+bundleId: 6927568
 url: https://ctopendata.shinyapps.io/p20_win_data_dictionary/
-when: 1674594349.95199
-lastSyncTime: 1674594349.95201
+when: 1678220949.0017
+lastSyncTime: 1678220949.00171
+asMultiple: FALSE
+asStatic: FALSE
