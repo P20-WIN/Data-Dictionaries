@@ -17,7 +17,7 @@ This repository contains the P20 WIN Data Dictionary, and the scripts for creati
 
 ![dd 3](https://user-images.githubusercontent.com/103579521/178348411-030b22aa-10e4-4fb0-971b-d9dbbc7c741b.PNG)
 
-4. Drag or choose file to upload. <br> ***If you are updating an exisiting data dictionary, please ensure that the file you are uploading has the same file name and file type of the exiting data dictionary file. This will overwrite the prior version and ensure updates and addtions are reflected in the P20 WIN Data Dictionary App.***
+4. Drag or choose file to upload. <br> ***If you are updating an existing data dictionary, please ensure that the file you are uploading has the same file name and file type of the exiting data dictionary file. This will overwrite the prior version and ensure updates and additions are reflected in the P20 WIN Data Dictionary App.***
 
 ![dd 4](https://user-images.githubusercontent.com/103579521/178348867-c88810b9-36e8-467c-abdc-a7cdc6f32e66.PNG)
 
