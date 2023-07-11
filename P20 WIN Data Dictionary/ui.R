@@ -34,11 +34,11 @@ P20_theme <- bs_theme(
   bootswatch = "yeti",
   bg = "#ffffff",
   fg =  "#054266",
-  primary = "#053955",
+  primary = "#00548b",
   secondary = "#0071BB",
-  base_font = font_google("Open Sans"),
-  heading_font = font_google("Open Sans"),
-  font_scale = 1
+  base_font = font_google("Karla"),
+  heading_font = font_google("Karla"),
+  font_scale = 1.1
 )
 
 #capturing the date to include at the bottom of page 
@@ -51,15 +51,16 @@ today <-format(today, format="%B %d %Y")
 shinyUI(
   #our app is currently setup with a navigation bar and multiple pages. If you only need one page, you should use fluidPage instead.
   navbarPage(
+    fillPage(
+      theme = P20_theme),
     #creating the title that lives on the navbar with our logo and name.
-    title = div(img(width = 40, src = "P20WINlogo_color_noname.png", style = "padding-bottom:5px;"),
-                "P20 WIN", style = "padding-top:40px; padding-right:0px;", 
+    title = div(img(width = 40, src = "P20WINlogo_color_noname.png", style = "padding-bottom:7px;"),
+                "P20 WIN", style = "padding-top:45px; padding-right:0px;", 
               ), 
     #setting the page theme
     theme = P20_theme,
     #HTML is used here to set the height and padding for the navbar.
-    tags$head(
-      tags$style(HTML(' .navbar {
+    header = tags$style(HTML(' .navbar {
                           height: 60px;
                           min-height:25px !important;
                         }
@@ -68,14 +69,10 @@ shinyUI(
                             padding-bottom:1px !important;
                             height: 25px;
                             font-size: 25px;
-                            }'))),
+                            }')),
     #These are the pages that will be located in the navbar. We use a regular tabPanel for the first page and then a
     #navbarMenu page with two tabPanel pages nested inside. 
-             tabPanel(
-               "Data Dictionary",
-               fluidPage(title="Data Dictionary",
-                         theme = P20_theme
-                         ),
+             tabPanel("Data Dictionary",
                #This sidebar panel includes the three filters for agency, program, and category. 
                #They are all multiple selection "pickerInput" filters
                sidebarLayout(
@@ -108,7 +105,7 @@ shinyUI(
                  #This panel contains the data dictionary table.
                  mainPanel(
                    width = 9,
-                   height = 100,
+                   height = 95,
                    #HTML is used here to hide the horizontal scroll bar
                    tags$table(
                      tags$style(HTML("table {table-layout: fixed;
@@ -146,3 +143,4 @@ shinyUI(
               )
     )
   )
+
