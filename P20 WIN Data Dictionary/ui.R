@@ -51,8 +51,6 @@ today <-format(today, format="%B %d %Y")
 shinyUI(
   #our app is currently setup with a navigation bar and multiple pages. If you only need one page, you should use fluidPage instead.
   navbarPage(
-    fillPage(
-      theme = P20_theme),
     #creating the title that lives on the navbar with our logo and name.
     title = div(img(width = 40, src = "P20WINlogo_color_noname.png", style = "padding-bottom:7px;"),
                 "P20 WIN", style = "padding-top:45px; padding-right:0px;", 
