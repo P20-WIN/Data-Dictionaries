@@ -67,7 +67,9 @@ shinyUI(
                             padding-bottom:1px !important;
                             height: 25px;
                             font-size: 25px;
-                            }')),
+                            }'),
+                        "body {overflow-y: hidden;}"
+                        ),
     #These are the pages that will be located in the navbar. We use a regular tabPanel for the first page and then a
     #navbarMenu page with two tabPanel pages nested inside. 
              tabPanel("Data Dictionary",
