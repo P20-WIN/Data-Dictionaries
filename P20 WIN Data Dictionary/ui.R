@@ -52,8 +52,8 @@ shinyUI(
   #our app is currently setup with a navigation bar and multiple pages. If you only need one page, you should use fluidPage instead.
   navbarPage(
     #creating the title that lives on the navbar with our logo and name.
-    title = div(img(width = 40, src = "P20WINlogo_color_noname.png", style = "padding-bottom:7px;"),
-                "P20 WIN", style = "padding-top:45px; padding-right:0px;", 
+    title = div(img(width = 40, src = "P20WINlogo_color_noname.png", style = "padding-bottom:10px;"),
+                "P20 WIN", style = "padding-top:45px; padding-bottom:5px; padding-right:10px;", 
               ), 
     #setting the page theme
     theme = P20_theme,
@@ -63,10 +63,10 @@ shinyUI(
                           min-height:25px !important;
                         }
                       .navbar-nav > li > a, .navbar-brand {
-                            padding-top:1px !important; 
-                            padding-bottom:1px !important;
-                            height: 25px;
-                            font-size: 25px;
+                            padding-top:10px !important; 
+                            padding-bottom:25px !important;
+                            height: 18px;
+                            font-size: 18px;
                             }'),
                         "body {overflow-y: hidden;}"
                         ),

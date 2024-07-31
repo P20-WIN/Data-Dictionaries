@@ -1,13 +1,11 @@
 name: data_dictionary_test
-title: data_dictionary_test
+title: P20 WIN Data Dictionary
 username:
 account: ctopendata
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 8124693
-bundleId: 7565751
+bundleId: 8921161
 url: https://ctopendata.shinyapps.io/data_dictionary_test/
-when: 1692028590.96414
-lastSyncTime: 1692028590.96417
 asMultiple: FALSE
 asStatic: FALSE
