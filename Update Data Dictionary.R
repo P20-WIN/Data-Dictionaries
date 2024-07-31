@@ -33,10 +33,12 @@ CSSD <- read_excel("C:/Users/wonderlyc/Documents/GitHub/Data-Dictionaries/Data D
   mutate_all(as.character)
 CTECS <- read_excel("C:/Users/wonderlyc/Documents/GitHub/Data-Dictionaries/Data Dictionaries (Upload Here)/CTECS/CTECS_Data_Dictionary.xlsx") %>% 
   mutate_all(as.character)
+DOC <- read_excel("C:/Users/wonderlyc/Documents/GitHub/Data-Dictionaries/Data Dictionaries (Upload Here)/DOC/DOC_Data_Dictionary.xlsx") %>% 
+  mutate_all(as.character)
 
 
 #### Creating P20 WIN Data Dictionary ####
-P20WIN_Data_Dictionary <- rbind(CCEH,CCIC,CSCU,DCF,DHMAS,DOL,CSSD,OEC,OHE,SDE,UConn,CSSD,CTECS)
+P20WIN_Data_Dictionary <- rbind(CCEH,CCIC,CSCU,DCF,DHMAS,DOL,CSSD,OEC,OHE,SDE,UConn,CSSD,CTECS,DOC)
 P20WIN_Data_Dictionary$`Click to View More` <- '&oplus;' #adding the column that will be used to expand the selection.
 P20WIN_Data_Dictionary <- P20WIN_Data_Dictionary[,c(8,1:7)] #moving the added column to be the first column
 P20WIN_Data_Dictionary[is.na(P20WIN_Data_Dictionary)] <- "Not Available"
