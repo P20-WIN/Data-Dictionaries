@@ -1,11 +1,11 @@
 name: p20_win_data_dictionary
-title: P20 WIN Data Dictionary
+title: p20_win_data_dictionary
 username:
 account: ctopendata
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6607389
-bundleId: 8921187
+bundleId: 8930734
 url: https://ctopendata.shinyapps.io/p20_win_data_dictionary/
 asMultiple: FALSE
 asStatic: FALSE
