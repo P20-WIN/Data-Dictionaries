@@ -80,7 +80,7 @@ server <- function(session, input, output) {
     escape = 0,
     options = list(
                 scrollX = FALSE, ## disable scrolling on X axis
-                scrollY = '64vh',   ## enable scrolling on Y axis and setting table height to 64% of the screens verticle height. This will depend on how tall the navbar or header is.
+                scrollY = '64vh',   ## enable scrolling on Y axis and setting table height to 64% of the screens vertical height. This will depend on how tall the navbar or header is.
                 autoWidth = FALSE, ## disable auto column widths (set below)
                 columnDefs = list(
                   list(targets = c(0), visible = TRUE, width = '60px', ## this column will work as a button to expand the row to show hidden fields (see callback = JS below)
