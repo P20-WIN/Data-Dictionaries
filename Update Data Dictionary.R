@@ -11,8 +11,8 @@ library(xlsx)
 library(dplyr)
 
 #### Reading in the Data Dictionaries - add row for new agencies ####
-CCEH <- read_excel("GitHub/Data-Dictionaries/Data Dictionaries (Upload Here)/CCEH/CCEH_Data_Dictionary.xlsx") %>% 
-  mutate_all(as.character)
+#CCEH <- read_excel("GitHub/Data-Dictionaries/Data Dictionaries (Upload Here)/CCEH/CCEH_Data_Dictionary.xlsx") %>% 
+#  mutate_all(as.character)
 CCIC <- read_excel("GitHub/Data-Dictionaries/Data Dictionaries (Upload Here)/CCIC/CCIC_Data_Dictionary.xlsx") %>% 
   mutate_all(as.character)
 CSCU <- read_excel("GitHub/Data-Dictionaries/Data Dictionaries (Upload Here)/CSCU/CSCU_Data_Dictionary.xlsx") %>% 
@@ -38,9 +38,8 @@ CTECS <- read_excel("GitHub/Data-Dictionaries/Data Dictionaries (Upload Here)/CT
 DOC <- read_excel("GitHub/Data-Dictionaries/Data Dictionaries (Upload Here)/DOC/DOC_Data_Dictionary.xlsx") %>% 
   mutate_all(as.character)
 
-
 #### Creating P20 WIN Data Dictionary ####
-P20WIN_Data_Dictionary <- rbind(CCEH,CCIC,CSCU,DCF,DHMAS,DOL,CSSD,OEC,OHE,SDE,UConn,CSSD,CTECS,DOC)
+P20WIN_Data_Dictionary <- rbind(CCIC,CSCU,DCF,DHMAS,DOL,CSSD,OEC,OHE,SDE,UConn,CSSD,CTECS,DOC)
 P20WIN_Data_Dictionary$`Click to View More` <- '&oplus;' #adding the column that will be used to expand the selection.
 P20WIN_Data_Dictionary <- P20WIN_Data_Dictionary[,c(8,1:7)] #moving the added column to be the first column
 P20WIN_Data_Dictionary[is.na(P20WIN_Data_Dictionary)] <- "Not Available"
